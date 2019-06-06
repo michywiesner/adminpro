@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 // ng2-charts
-import { ChartType } from 'chart.js';
-import { MultiDataSet, Label } from 'ng2-charts';
+// import { ChartType } from 'chart.js';
+// import { MultiDataSet, Label } from 'ng2-charts';
 
 @Component({
   selector: 'app-graficas1',
