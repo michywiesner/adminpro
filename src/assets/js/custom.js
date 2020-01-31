@@ -7,6 +7,7 @@ File: js
 
 function init_plugins() {
 
+
     $(function() {
         "use strict";
         $(function() {
@@ -103,13 +104,13 @@ function init_plugins() {
         //tooltip
         // ============================================================== 
         $(function() {
-                $('[data-toggle="tooltip"]').tooltip()
+                $('[data-toggle="tooltip"]').tooltip({});
             })
             // ============================================================== 
             //Popover
             // ============================================================== 
         $(function() {
-                $('[data-toggle="popover"]').popover()
+                $('[data-toggle="popover"]').popover({})
             })
             // ============================================================== 
             // Sidebarmenu
