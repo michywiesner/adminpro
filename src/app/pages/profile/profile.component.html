@@ -1,0 +1,53 @@
+<div class="row animated fadeIn">
+    <div class="col-lg-7">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">User Profile</h4>
+                <h6 class="card-subtitle">Nombre de usuario</h6>
+                <form ngNativeValidate #f="ngForm" (ngSubmit)="guardar( f.value )" class="form p-t-20">
+                    <div class="form-group">
+                        <label for="exampleInputuname">User Name</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend"><i class="ti-user input-group-text"></i></div>
+                            <input type="text" [ngModel]="usuario.nombre" name="nombre" class="form-control" placeholder="Username" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend"><i class="ti-email input-group-text"></i></div>
+                            <input type="email" [ngModel]="usuario.email" [disabled]="usuario.google" name="email" class="form-control" placeholder="Enter email" required>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                       <i class="fa fa-save"></i> Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-5">
+        <div class="card">
+            <div class="card-body text-center">
+                <h4 class="card-title">User image</h4>
+                <h6 class="card-subtitle"> nombre usuario</h6>
+
+                <img *ngIf="!imagenTemp" src="{{ usuario.img | imagen }}" class="w150">
+                <img *ngIf="imagenTemp" src="{{ imagenTemp }}" class="w150">
+                <br>
+                <br>
+                <input (change)="seleccionImagen( $event.target.files[0] )" type="file">
+                <hr>
+
+                <button (click)="cambiarImagen()" [disabled]="!imagenSubir" type="button" class="btn btn-block btn-success waves-effect waves-light m-r-10">
+                    <i class="fa fa-save"></i> Submit
+                 </button>
+
+            </div>
+        </div>
+    </div>
+</div>
