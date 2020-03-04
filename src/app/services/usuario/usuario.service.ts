@@ -95,12 +95,16 @@ export class UsuarioService {
     url += '?token=' + this.token;
 
     return this.http.put( url, usuario ).pipe(map((res: any) => {
-      const usuarioDB: Usuario = res.usuario;
-      this.guardarStorage( usuarioDB._id, this.token, usuarioDB );
+      if ( usuario._id === this.usuario._id ) {
+
+        const usuarioDB: Usuario = res.usuario;
+        this.guardarStorage( usuarioDB._id, this.token, usuarioDB );
+      }
+
       Swal.fire({
         icon: 'success',
         title: 'Usuario Actualizado',
-        text: usuarioDB.nombre
+        text: usuario.nombre
       });
       return true;
     }));
@@ -119,5 +123,23 @@ export class UsuarioService {
     }).catch( error => {
       console.error( error );
     });
+  }
+
+  cargarUsuarios( desde: number = 0 ) {
+    const url = URL_SERVICIOS + 'usuario?desde=' + desde;
+    return this.http.get(url);
+  }
+
+  busquedaUsuarios( termino: string ) {
+    const url = URL_SERVICIOS + 'busqueda/coleccion/usuarios/' + termino;
+    return this.http.get( url ).pipe(map( (res: any) => res.usuarios ));
+  }
+
+  deleteUsuario ( id: string ) {
+    let url = URL_SERVICIOS + 'usuario/' + id;
+    url += '?token=' + this.token;
+
+    return this.http.delete( url );
+
   }
 }

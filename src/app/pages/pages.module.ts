@@ -19,6 +19,8 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUploadsComponent } from '../components/modal-uploads/modal-uploads.component';
 
 
 
@@ -33,7 +35,9 @@ import { RxjsComponent } from './rxjs/rxjs.component';
         AccountSettingsComponent,
         PromesasComponent,
         RxjsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsuariosComponent,
+        ModalUploadsComponent
     ],
     exports: [
         PagesComponent,

@@ -37,6 +37,7 @@ export class ProfileComponent implements OnInit {
 
     if ( archivo.type.indexOf('image') < 0 ) {
       this.imagenSubir = null;
+      this.imagenTemp = '';
       Swal.fire({
         icon: 'warning',
         title: 'Solo imagenes',
