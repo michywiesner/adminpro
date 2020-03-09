@@ -21,6 +21,9 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModalUploadsComponent } from '../components/modal-uploads/modal-uploads.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
 
 
 
@@ -37,7 +40,10 @@ import { ModalUploadsComponent } from '../components/modal-uploads/modal-uploads
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalUploadsComponent
+        ModalUploadsComponent,
+        HospitalesComponent,
+        MedicosComponent,
+        MedicoComponent
     ],
     exports: [
         PagesComponent,

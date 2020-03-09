@@ -94,7 +94,7 @@ export class UsuariosComponent implements OnInit {
                             .subscribe( res => {
                               Swal.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
+                                'Your user has been deleted.',
                                 'success'
                               );
                               this.cargarUsuarios();

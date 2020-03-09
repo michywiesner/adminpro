@@ -6,6 +6,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 export class ModalUploadsService {
 
   public id: string;
+  public tipo: string;
 
   public notificacion = new EventEmitter<any>();
 
@@ -15,9 +16,11 @@ export class ModalUploadsService {
 
    cerrarModal() {
      this.id = null;
+     this.id = null;
    }
 
-    abrirModal( idx: string ) {
+    abrirModal( idx: string, tipo: string ) {
      this.id = idx;
+     this.tipo = tipo;
     }
 }

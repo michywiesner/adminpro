@@ -12,7 +12,6 @@ export class ModalUploadsComponent implements OnInit {
 
   imagenSubir: File;
   imagenTemp: string | ArrayBuffer;
-  tipo: 'usuarios';
 
   constructor(public _cargaArchivo: SubirArchivoService, public _modalUpload: ModalUploadsService) { }
 
@@ -52,7 +51,7 @@ export class ModalUploadsComponent implements OnInit {
   }
 
   subirImagen() {
-    this._cargaArchivo.subirArchivo(this.imagenSubir, 'usuarios' , this._modalUpload.id)
+    this._cargaArchivo.subirArchivo(this.imagenSubir, this._modalUpload.tipo , this._modalUpload.id)
                       .then( res => {
                         this._modalUpload.notificacion.emit( res );
                         Swal.fire({
