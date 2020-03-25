@@ -74,6 +74,13 @@ export class RegisterComponent implements OnInit {
                             text: ('Usuario ' + usuario.email + ' creado correctamente')
                           });
                           this.router.navigate(['/login']);
+                        },
+                        err => {
+                          Swal.fire({
+                            icon: 'error',
+                            title: err.error.mensaje,
+                            text: err.error.errors.message
+                          });
                         });
   }
 
