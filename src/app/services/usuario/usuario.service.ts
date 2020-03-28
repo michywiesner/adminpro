@@ -125,6 +125,26 @@ export class UsuarioService {
     }));
   }
 
+  renuevatoken() {
+    let url = URL_SERVICIOS + 'login/renuevatoken';
+    url += '?token=' + this.token;
+
+    return this.http.get(url).pipe(map( (res: any) => {
+                                    this.token = res.token;
+                                    localStorage.setItem('token', this.token);
+                                    return true;
+                                    }),
+                                    catchError( err => {
+                                      Swal.fire({
+                                        icon: 'error',
+                                        title: 'Error en el token',
+                                        text: 'No se pudo actualizar token'
+                                      });
+                                      this.router.navigate(['/login']);
+                                      return throwError(err);
+                                    }));
+  }
+
   actualizarImagen( file: File, id: string ) {
     this.service.subirArchivo( file, 'usuarios', id).then( (res: any) => {
       this.usuario.img = res.usuario.img;

@@ -20,17 +20,16 @@ import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
-import { ModalUploadsComponent } from '../components/modal-uploads/modal-uploads.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
 import { MedicoComponent } from './medicos/medico.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { ModalUploadsComponent } from '../components/modal-uploads/modal-uploads.component';
 
 
 
 @NgModule({
     declarations: [
-        PagesComponent,
         DashboardComponent,
         ProgressComponent,
         Graficas1Component,
@@ -41,14 +40,13 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalUploadsComponent,
         HospitalesComponent,
         MedicosComponent,
         MedicoComponent,
-        BusquedaComponent
+        BusquedaComponent,
+        ModalUploadsComponent
     ],
     exports: [
-        PagesComponent,
         DashboardComponent,
         ProgressComponent,
         Graficas1Component

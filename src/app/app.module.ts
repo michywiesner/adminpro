@@ -15,20 +15,23 @@ import { PagesModule } from './pages/pages.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
     APP_ROUTES,
-    PagesModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
